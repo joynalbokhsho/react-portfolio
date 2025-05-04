@@ -1,0 +1,126 @@
+header {
+    height: auto;
+    min-height: 35vh;
+    padding: 8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.header_container {
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.responsive-name {
+    font-size: 4rem;
+    margin: 1rem 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    background: linear-gradient(to right, var(--color-primary), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 2s linear infinite;
+    background-size: 200% auto;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Status dot and clan tag styles */
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+    top: -1px;
+}
+
+.status-online {
+    background-color: #43b581;
+    box-shadow: 0 0 5px rgba(67, 181, 129, 0.7);
+}
+
+.status-idle {
+    background-color: #faa61a;
+    box-shadow: 0 0 5px rgba(250, 166, 26, 0.7);
+}
+
+.status-dnd {
+    background-color: #f04747;
+    box-shadow: 0 0 5px rgba(240, 71, 71, 0.7);
+}
+
+.status-offline {
+    background-color: #747f8d;
+    box-shadow: 0 0 5px rgba(116, 127, 141, 0.7);
+}
+
+.clan-tag {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    .responsive-name {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 6rem 0;
+    }
+    
+    .responsive-name {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        padding: 4rem 0;
+    }
+    
+    .header_container.mobile {
+        width: 95%;
+    }
+    
+    .responsive-name {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin: 0.8rem auto;
+    }
+    
+    h4 {
+        font-size: 1.2rem;
+    }
+    
+    h5 {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .responsive-name {
+        font-size: 2rem;
+    }
+    
+    h4 {
+        font-size: 1rem;
+    }
+    
+    h5 {
+        font-size: 0.9rem;
+    }
+}

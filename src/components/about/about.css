@@ -1,0 +1,197 @@
+.about_container {
+    display: grid;
+    grid-template-columns: 35% 50%;
+    gap: 15%;
+}
+
+h2 {
+    margin-bottom: 3rem;
+}
+
+.about_me {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 2rem;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+/* Status-specific background colors for About image container */
+.status-bg-online {
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(67, 181, 129, 0.8),
+        transparent
+    );
+    box-shadow: 0 0 15px rgba(67, 181, 129, 0.5);
+}
+
+.status-bg-idle {
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(250, 166, 26, 0.8),
+        transparent
+    );
+    box-shadow: 0 0 15px rgba(250, 166, 26, 0.5);
+}
+
+.status-bg-dnd {
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(240, 71, 71, 0.8),
+        transparent
+    );
+    box-shadow: 0 0 15px rgba(240, 71, 71, 0.5);
+}
+
+.status-bg-offline {
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(116, 127, 141, 0.8),
+        transparent
+    );
+    box-shadow: 0 0 15px rgba(116, 127, 141, 0.5);
+}
+
+.about_me-image {
+    width: 90%;
+    height: 90%;
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: rotate(10deg);
+    transition: var(--transition);
+}
+
+.about_me-image:hover {
+    transform: rotate(0);
+}
+
+.about_me-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+    transition: var(--transition);
+}
+
+/* Ensure Discord profile picture displays properly */
+.about_me img {
+    border-radius: 2rem;
+    transform: scale(1.1); /* Slightly larger to fill the container better */
+    transition: transform 0.3s ease;
+}
+
+.about_me img:hover {
+    transform: scale(1.15); /* Subtle zoom on hover */
+}
+
+.about_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.about_card {
+    background: var(--color-bg-variant);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.about_card:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+}
+
+.about_icon {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.about_card h5 {
+    font-size: 1rem;
+}
+
+.about_card small {
+    font-size: 0.9rem;
+    color: var(--color-light);
+}
+
+.about-text {
+    margin: 2rem 0 2.6rem;
+    color: var(--color-light);
+    line-height: 1.7;
+}
+
+.about-text b {
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+/* Rainbow text animation for elements with rgbtext class */
+.about-text .rgbtext {
+    background: linear-gradient(to right, #ff0000, #00ff00, #0000ff, #ff0000);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 10s ease infinite;
+    font-weight: bold;
+}
+
+@keyframes rainbow {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.about_content p {
+    margin: 2rem 0 2.6rem;
+    color: var(--color-light);
+}
+
+
+@media screen and (max-width: 1024px) {
+    .about_container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .about_me {
+        width: 50%;
+        margin: 2rem auto 4rem;
+    }
+
+    .about_content p {
+        margin: 1rem 0 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about_me {
+        width: 65%;
+        margin: 0 auto 3rem;
+    }
+
+    .about_cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .about_content {
+        text-align: center;
+    }
+
+    .about_content p {
+        margin: 1.5rem 0;
+    }
+}
