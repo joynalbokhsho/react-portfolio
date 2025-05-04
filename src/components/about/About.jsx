@@ -45,7 +45,7 @@ const About = () => {
   }, []);
 
   // Default about text as fallback
-  const defaultAboutText = `Nai`;
+  const defaultAboutText = `Waiting for API to load...`;
 
   return (
     <section id="about" data-aos="fade-up">
